@@ -42,9 +42,26 @@ As a web developer I want a quick way to generate a README file to include for m
 
 ## License
 
-The [MIT](https://choosealicense.com/licenses/mit/) License is a permissive free software license originating at the Massachusetts Institute of Technology (MIT) in the late 1980s. As a permissive license, it puts only very limited restriction on reuse and has, therefore, high license compatibility.
+[MIT](https://choosealicense.com/licenses/mit/) Copyright (c) 2020 Jose Ulices Perez Jr.
 
-The MIT license is compatible with many copyleft licenses, such as the GNU General Public License (GPL); MIT licensed software can be re-licensed as GPL software, and integrated with other GPL software, but not the other way around. The MIT license also permits reuse within proprietary software, provided that either all copies of the licensed software include a copy of the MIT License terms and the copyright notice, or the software is re-licensed to remove this requirement. MIT-licensed software can also be re-licensed as proprietary software, which distinguishes it from copyleft software licenses. As of 2020, MIT was the most popular software license found in one analysis, continuing from reports in 2015 that MIT was the most popular software license on GitHub, ahead of any GPL variant and other free and open-source software (FOSS) licenses. [(Wiki)](https://en.wikipedia.org/wiki/MIT_License#:~:text=The%20MIT%20License%20is%20a,%2C%20therefore%2C%20high%20license%20compatibility.)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 
 ## Questions
 
