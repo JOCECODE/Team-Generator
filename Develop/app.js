@@ -14,29 +14,67 @@ const render = require("./lib/htmlRenderer");
 const employeeArray = [];
 const employeeChoices = ["Intern", "Engineer", "No more, This is my Team!"]
 
+
+// VALIDATE FOR NAME IF ERROR RETURN ERROR MESSAGE
+function nameVal(name) {
+  let pass = name.match(
+    /([a-zA-Z]{1,})(\s)(([a-zA-Z]){1}(\s))?([a-zA-Z]{1,})((\s)([a-zA-Z]{2}))?((\.){1})?/g
+  );
+  if (pass) {
+    return true;
+  }
+
+  return "Please enter First, Middle In.(optional), Last Name, suffix(optional)";
+}
+
+// VALIDATE FOR ID IF ERROR RETURN MUST CONTAINT ONLY NUMBERS
+function numVal(input) {
+  let pass = input.match(/[0-9]{3}/g);
+  if (pass) {
+    return true;
+  }
+
+  return "Please enter a valid I.D. number (must be 3 digits)";
+}
+
+// VALIDATE FOR EMAIL IF ERROR RETURN MUST CONTAINT ONLY NUMBERS
+function emVal(input) {
+  let pass = input.match(
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+  if (pass) {
+    return true;
+  }
+
+  return "Please enter a valid email address (ex. hello57@hotmail.net)";
+}
+
 // FUNCTION TO RUN PROMPT SEQUENCE FOR MANAGER
 function buildYourManager(){
     inquirer.prompt([{
         type: "input",
         name: "name",
         message: "What is your manager's name?",
+        validate: nameVal,
         
     },
     {
         type: "input",
         name: "id",
         message: "What is their I.D. number?",
+        validate: numVal,
         
     },
     {
         type: "input",
         name: "email",
         message: "What is their email?",
+        validate: emVal,
     },
     {
         type: "input",
         name: "officeNumber",
         message: "What is the manager's office number?",
+        validate: offVal,
         }]).then((response) => {
             // CREATE NEW MANAGER OBJECT
             let manager = new Manager();
