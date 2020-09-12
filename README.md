@@ -13,11 +13,11 @@
 
 ## User-Demo
 
-[![A thumbnail of the User demo video](http://www.youtube.com/watch?v=ZSwRZUvwkek/0.jpg)](http://www.youtube.com/watch?v=ZSwRZUvwkek "Click to watch User Demo")
+[![User Demo of The Application](http://img.youtube.com/vi/ZSwRZUvwkek/0.jpg)](http://www.youtube.com/watch?v=ZSwRZUvwkek "(click to watch the YouTube video)")
 
 Screenshots:
-![Screenshots](</screenshots/Screenshots(2).png?raw=true> "Screenshot Of User Demo")
-![Screenshots](</screenshots/Screenshots(3).png?raw=true> "Screenshot Of User Demo")
+![screenshots](develop\screenshots\Screenshots(2).png "Screenshot Of User Demo")
+![screenshots](develop\screenshots\Screenshots(3).png "Screenshot Of User Demo")
 
 ## Description
 
@@ -36,7 +36,7 @@ As a web developer I want a quick way to generate a team.html to show all the pe
   - to install [inquirer](https://www.npmjs.com/package/inquirer#installation) run the following code in your terminal:
     `npm i inquirer`
 - User-Flow
-  - Using the _app.js_ as a an entry point then running `node index.js` on the terminal will start the application. The application starts by asking "What is your manager's name?" It follows a series of more questions and upon completion displays a success message stating the file has been created. The new file will be made in the output file as an html.
+  - Using the _app.js_ as a an entry point then running `node app.js` on the terminal will start the application. The application starts by asking "What is your manager's name?" It follows a series of more questions and upon completion displays a success message stating the file has been created. The new file will be made in the output file as an html.
 
 ## License
 
