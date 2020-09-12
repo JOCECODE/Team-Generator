@@ -18,18 +18,18 @@ const employeeChoices = ["Intern", "Engineer", "No more, This is my Team!"]
 // VALIDATE FOR NAME IF ERROR RETURN ERROR MESSAGE
 function nameVal(name) {
   let pass = name.match(
-    /([a-zA-Z]{1,})(\s)(([a-zA-Z]){1}(\s))?([a-zA-Z]{1,})((\s)([a-zA-Z]{2}))?((\.){1})?/g
+    /([a-zA-Z]{1,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{1,}\s?(^[a-zA-Z]{1,})?$)/g
   );
   if (pass) {
     return true;
   }
 
-  return "Please enter First, Middle In.(optional), Last Name, suffix(optional)";
+  return "Please enter a valid name (First name, Middle In.(optional), Last Name, suffix(optional))";
 }
 
 // VALIDATE FOR ID IF ERROR RETURN MUST CONTAINT ONLY NUMBERS
 function numVal(input) {
-  let pass = input.match(/[0-9]{3}/g);
+  let pass = input.match(/^([0-9]{3})$/g);
   if (pass) {
     return true;
   }
@@ -46,6 +46,26 @@ function emVal(input) {
   }
 
   return "Please enter a valid email address (ex. hello57@hotmail.net)";
+}
+
+// VALIDATE FOR OFFICE NUMBER IF ERROR RETURN MUST CONTAINT ONLY NUMBERS
+function offVal(input) {
+  let pass = input.match(/^([0-9]{2})$/g);
+  if (pass) {
+    return true;
+  }
+
+  return "Please enter a two digit number";
+}
+
+// VALIDATE FOR GITHUB USERNAME IF ERROR RETURN MUST CONTAINT ONLY NUMBERS
+function gitHub(input) {
+  let pass = input.match(/^[A-Za-z0-9]{1,}$/g);
+  if (pass) {
+    return true;
+  }
+
+  return "Please enter valid gitHub username";
 }
 
 // FUNCTION TO RUN PROMPT SEQUENCE FOR MANAGER
@@ -114,29 +134,35 @@ function buildYourTeam() {
 } 
 // // FUNCTION TO RUN PROMPT SEQUENCE FOR INTERN
 function buildYourIntern() {
-    inquirer.prompt([{
-        type: "input",
-        name: "nameInt",
-        message: "What is your Intern's name?",
-
-    },
-    {
-        type: "input",
-        name: "idInt",
-        message: "What is their I.D. number?",
-
-    },
-    {
-        type: "input",
-        name: "emailInt",
-        message: "What is their email?",
-    },
-    {
-        type: "input",
-        name: "schoolInt",
-        message: "What is their school name?",
-    }]).then((intR) => {
-        // BUILD NEW INTERN OBJECT 
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "nameInt",
+          message: "What is your Intern's name?",
+          validate: nameVal,
+        },
+        {
+          type: "input",
+          name: "idInt",
+          message: "What is their I.D. number?",
+          validate: numVal,
+        },
+        {
+          type: "input",
+          name: "emailInt",
+          message: "What is their email?",
+          validate: emVal,
+        },
+        {
+          type: "input",
+          name: "schoolInt",
+          message: "What is their school name?",
+          validate: nameVal,
+        },
+      ])
+      .then((intR) => {
+        // BUILD NEW INTERN OBJECT
         let intern = new Intern();
         intern.name = intR.nameInt;
         intern.id = intR.idInt;
@@ -145,32 +171,38 @@ function buildYourIntern() {
         employeeArray.push(intern);
         // CALL BUILD YOUR TEAM GENERATOR FUNCTION TO START SEQUENCE AGAIN
         buildYourTeam();
-    })
+      });
 }
 // // FUNCTION TO RUN PROMPT SEQUENCE FOR ENGINEER
 function buildYourEngineer() {
-    inquirer.prompt([{
-        type: "input",
-        name: "nameEng",
-        message: "What is your Engineer's name?",
-
-    },
-    {
-        type: "input",
-        name: "idEng",
-        message: "What is their I.D. number?",
-
-    },
-    {
-        type: "input",
-        name: "emailEng",
-        message: "What is their email?",
-    },
-    {
-        type: "input",
-        name: "githubEng",
-        message: "What is their gitHub email?",
-    }]).then((engR) => {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "nameEng",
+          message: "What is your Engineer's name?",
+          validate: nameVal,
+        },
+        {
+          type: "input",
+          name: "idEng",
+          message: "What is their I.D. number?",
+          validate: numVal,
+        },
+        {
+          type: "input",
+          name: "emailEng",
+          message: "What is their email?",
+          validate: emVal,
+        },
+        {
+          type: "input",
+          name: "githubEng",
+          message: "What is their gitHub username?",
+          validate: gitHub,
+        },
+      ])
+      .then((engR) => {
         // BUILD NEW ENGINEER OBJECT
         let engineer = new Engineer();
         engineer.name = engR.nameEng;
@@ -181,7 +213,7 @@ function buildYourEngineer() {
         employeeArray.push(engineer);
         // // FUNCTION TO RUN PROMPT SEQUENCE FOR ENGINEER
         buildYourTeam();
-    })
+      });
 }
 // CALL PROMPT SEQUENCE FOR MANAGER
  buildYourManager();
