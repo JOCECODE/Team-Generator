@@ -1,7 +1,5 @@
-// TODO: Write code to define and export the Employee class
-// PROPERTIES NAME ID EMAIL 
-// METHODS getName() getId() getEmail() getRole() RETURNS 'Employee'
 
+// EMPLOYEE CLASS 
 class Employee {
     constructor(name, id, email){
         this.name = name;

@@ -24,9 +24,20 @@ function nameVal(name) {
     return true;
   }
 
-  return "Please enter a valid name (First name, Middle In.(optional), Last Name, suffix(optional))";
+  return "Please enter a valid name First and Last name (ex. Tony Stark)";
 }
 
+// VALIDATE FOR NAME IF ERROR RETURN ERROR MESSAGE
+function nameSchool(input) {
+  let pass = input.match(
+    /([a-zA-Z]{1,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{1,}\s?(^[a-zA-Z]{1,})?$)/g
+  );
+  if (pass) {
+    return true;
+  }
+
+  return "Please enter a valid School name (ex. Ashford University)";
+}
 // VALIDATE FOR ID IF ERROR RETURN MUST CONTAINT ONLY NUMBERS
 function numVal(input) {
   let pass = input.match(/^([0-9]{3})$/g);
@@ -34,7 +45,7 @@ function numVal(input) {
     return true;
   }
 
-  return "Please enter a valid I.D. number (must be 3 digits)";
+  return "Please enter a valid I.D. number must be 3 digits long (002)";
 }
 
 // VALIDATE FOR EMAIL IF ERROR RETURN MUST CONTAINT ONLY NUMBERS
@@ -55,7 +66,7 @@ function offVal(input) {
     return true;
   }
 
-  return "Please enter a two digit number";
+  return "Please enter a two digit number (ex. 02)";
 }
 
 // VALIDATE FOR GITHUB USERNAME IF ERROR RETURN MUST CONTAINT ONLY NUMBERS
@@ -65,7 +76,7 @@ function gitHub(input) {
     return true;
   }
 
-  return "Please enter valid gitHub username";
+  return "Please enter valid gitHub username(ex. JOCECODE)";
 }
 
 // FUNCTION TO RUN PROMPT SEQUENCE FOR MANAGER
@@ -73,7 +84,7 @@ function buildYourManager(){
     inquirer.prompt([{
         type: "input",
         name: "name",
-        message: "What is your manager's name?",
+        message: "What is the manager's name?",
         validate: nameVal,
         
     },
@@ -139,7 +150,7 @@ function buildYourIntern() {
         {
           type: "input",
           name: "nameInt",
-          message: "What is your Intern's name?",
+          message: "What is the Intern's name?",
           validate: nameVal,
         },
         {
@@ -158,7 +169,7 @@ function buildYourIntern() {
           type: "input",
           name: "schoolInt",
           message: "What is their school name?",
-          validate: nameVal,
+          validate: nameSchool,
         },
       ])
       .then((intR) => {
@@ -180,7 +191,7 @@ function buildYourEngineer() {
         {
           type: "input",
           name: "nameEng",
-          message: "What is your Engineer's name?",
+          message: "What is the Engineer's name?",
           validate: nameVal,
         },
         {

@@ -1,4 +1,4 @@
-# READMEGENERATOR
+# Teamplate-Engine-Employee-Summary
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
@@ -13,22 +13,20 @@
 
 ## User-Demo
 
-[![A thumbnail of the User demo video](http://img.youtube.com/vi/iBMBLGy10Ro/0.jpg)](http://www.youtube.com/watch?v=iBMBLGy10Ro "Click to watch User Demo")
+[![A thumbnail of the User demo video](http://www.youtube.com/watch?v=ZSwRZUvwkek/0.jpg)](http://www.youtube.com/watch?v=ZSwRZUvwkek "Click to watch User Demo")
 
 Screenshots:
 ![Screenshots](</screenshots/Screenshots(2).png?raw=true> "Screenshot Of User Demo")
 ![Screenshots](</screenshots/Screenshots(3).png?raw=true> "Screenshot Of User Demo")
-`A New Markdown file with the Title of the project as the name is then created!`
-![Screenshots](</screenshots/Screenshots(4).png?raw=true> "Screenshot Of User Demo")
 
 ## Description
 
-This is a command-line application that dynamically generates a professional README (Project Title).md from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer).
+This is a command-line application that dynamically generates a team.html containing the requested teams the user wanted team.html from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer).
 
 ## User-Story
 
 ```
-As a web developer I want a quick way to generate a README file to include for my projects.
+As a web developer I want a quick way to generate a team.html to show all the people on my team and their info.
 ```
 
 ## Installation&Usage
@@ -38,7 +36,7 @@ As a web developer I want a quick way to generate a README file to include for m
   - to install [inquirer](https://www.npmjs.com/package/inquirer#installation) run the following code in your terminal:
     `npm i inquirer`
 - User-Flow
-  - Using the _index.js_ as a an entry point then running `node index.js` on the terminal will start the application. The application starts by asking "What is the title of your project?" in which will name the (Project title).md and add to the title of the file. It follows a series of more questions and upon completion displays a success message stating the file has been created. The new file can now be used as a readme for your project.
+  - Using the _app.js_ as a an entry point then running `node index.js` on the terminal will start the application. The application starts by asking "What is your manager's name?" It follows a series of more questions and upon completion displays a success message stating the file has been created. The new file will be made in the output file as an html.
 
 ## License
 

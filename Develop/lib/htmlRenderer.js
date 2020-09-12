@@ -3,6 +3,7 @@ const fs = require("fs");
 
 const templatesDir = path.resolve(__dirname, "../templates");
 
+// RENDERS HTML FOR EMPLOYEES, MANAGER, ENGINERR,INTERN
 const render = employees => {
   const html = [];
 
