@@ -16,8 +16,8 @@
 [![User Demo of The Application](http://img.youtube.com/vi/ZSwRZUvwkek/0.jpg)](http://www.youtube.com/watch?v=ZSwRZUvwkek "(click to watch the YouTube video)")
 
 Screenshots:
-![screenshots](\Develop\screenshots\Screenshots(2).png?raw=true "Screenshot Of User Demo")
-![screenshots](\Develop\screenshots\Screenshots(3).png?raw=true "Screenshot Of User Demo")
+![Screenshots](<Develop/screenshots/Screenshots(2).png?raw=true> "Screenshot Of User Demo")
+![Screenshots](<Develop/screenshots/Screenshots(3).png?raw=true> "Screenshot Of User Demo")
 
 ## Description
 
